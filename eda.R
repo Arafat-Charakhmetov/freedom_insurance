@@ -6,6 +6,13 @@ data <- data.table::fread(data_path)
 colnames(data)
 drive_predictors <- colnames(data)[32:159]
 
+# Null value percents per column
+typeof(colMeans(is.na(data)) * 100)
+# claim_amount and claim_cnt has null values for people who didn't made a claim
+# 11.5% of ownerkato values is missing
+# 19.4% percent of engine_volume and engine_power is missing
+# All of the driver predictor score columns has a missing value
+
 # basic stats for business
 data[, mean(is_claim)]
 data[is_claim == 1, mean(claim_amount)]
@@ -24,3 +31,9 @@ data[premium==premium_wo_term, .N]/data[, .N]
 
 # crash rate by drivers age and experience
 data[, mean(is_claim), by = .(age_experience_name)]
+
+# bonus malus types
+data[, unique(bonus_malus)]
+
+# is individual_person_name
+data[, unique(is_individual_person)]
