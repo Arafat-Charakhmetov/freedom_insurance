@@ -37,3 +37,4 @@ data[, unique(bonus_malus)]
 
 # is individual_person_name
 data[, unique(is_individual_person)]
+data[, unique(is_residence_name)]
