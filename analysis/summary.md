@@ -13,7 +13,7 @@ Average premium is 13290 and 28.5% end up canceling their insurance.
 * 19.4% percent of `engine_volume` and `engine_power` is missing
 * All of the driver predictor score columns has a missing value
 
-#### mapping of id's ot names
+#### Mapping of id's to names
 Some columns repeat identical information. Both incorporate categorical information. 
 The only difference is that one stores category id while other uses the name. 
 Here is mapping of such cases
