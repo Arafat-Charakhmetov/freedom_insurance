@@ -1,6 +1,7 @@
+import polars as pl
 import os
 
-FILEPATH = os.path.join("..", "data", "dataset", "train.csv")
+FILEPATH = os.path.join("data", "dataset", "train.csv")
 
 bonus_malus_types = ["13", "8",  "4",  "10", "11", "12", "3", "5", "7", "6", "9", "2", "1", "M", "0", ""]
 car_age_types = ["свыше 7 лет", "до 7 лет включ."]
@@ -17,6 +18,16 @@ SCHEMA_OVERRIDES = {"car_year": pl.String,
                     "SCORE_12_4": pl.Float64,
                     "SCORE_12_5": pl.Float64,
                     "SCORE_12_6": pl.Float64}
+
+# Columns to be dropped from data, reasons inside analysis/summary.md
+DROP_COLUMNS = [
+        "is_individual_person",
+        "is_individual_person_name",
+        "is_residence_name",
+        "region_name",
+        "age_experience_name",
+        "vehicle_type_name"
+        ]
 
 TRAIN_FRACTION = 0.8
 
