@@ -1,6 +1,6 @@
 import os
 
-FILEPATH = os.path.join("..", "data", "final_dataset", "train.csv")
+FILEPATH = os.path.join("..", "data", "dataset", "train.csv")
 
 bonus_malus_types = ["13", "8",  "4",  "10", "11", "12", "3", "5", "7", "6", "9", "2", "1", "M", "0", ""]
 car_age_types = ["свыше 7 лет", "до 7 лет включ."]

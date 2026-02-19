@@ -1,5 +1,5 @@
 # Read data
-data_path <- here::here("final_dataset", "train.csv")
+data_path <- here::here("data", "dataset", "train.csv")
 data <- data.table::fread(data_path)
 
 # look into columns
