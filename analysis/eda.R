@@ -6,7 +6,7 @@ data <- data.table::fread(data_path)
 head(data)
 
 # Null value percents per column
-typeof(colMeans(is.na(data)) * 100)
+colMeans(is.na(data)) * 100
 
 # statistic for claims
 data[, mean(is_claim)]
