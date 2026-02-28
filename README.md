@@ -25,18 +25,23 @@ D --> results_df
 #### Model
 Our general model follows a simple logic.  
 For any given insuree, their premium payments should be more than their expected loss. That is,
+
 $$
 E[P_i] \geq E[L_i]
 $$
+
 where,
 $P_i$ is the premium paid by client $i \in {1, 2, ..., N}$  
 $L_i$ is the loss occured from client $i$. Note that $L_i = 0$ if client $i$ doesn't end up in car accident.  
+
 Here we take both metrics into expected value as both have elements of stochasticity. Obviously, we incur loss only if there is going to be an accident. However we should also take into account the fact that people may cancel their insurance and premiums is not guaranteed to come fully. As such, our model can be further decomposed as:
+
 $$
 E[P_i] := P_i \cdot Pr(C_i = 1) \qquad \text{and, } \\\\
 E[L_i] := Pr(D_i = 1)  \cdot  E[L_i | D_i = 1) 
 $$
-Where,
+
+where,
 $D_i$ is the indicator variable that tells us whether a given client participates in a car crash.  
 $C_i$ is the indicator variable that tells us whether a given client have cancelled their premium  
 $X_i$ is the matrix of the client characteristics.  
