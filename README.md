@@ -37,11 +37,13 @@ $L_i$ is the loss occured from client $i$. Note that $L_i = 0$ if client $i$ doe
 Here we take both metrics into expected value as both have elements of stochasticity. Obviously, we incur loss only if there is going to be an accident. However we should also take into account the fact that people may cancel their insurance and premiums is not guaranteed to come fully. As such, our model can be further decomposed as:
 
 $$
-E[P_i] := P_i \cdot Pr(C_i = 1) \qquad \text{and, } \\\\
-E[L_i] := Pr(D_i = 1)  \cdot  E[L_i | D_i = 1) 
+\begin{aligned}
+E[P_i] &= P_i \cdot Pr(C_i = 1) \qquad \text{and, } \\
+E[L_i] &= Pr(D_i = 1)  \cdot  E[L_i | D_i = 1) 
+\end{aligned}
 $$
 
-where,
+where,  
 $D_i$ is the indicator variable that tells us whether a given client participates in a car crash.  
 $C_i$ is the indicator variable that tells us whether a given client have cancelled their premium  
 $X_i$ is the matrix of the client characteristics.  
